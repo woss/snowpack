@@ -14,7 +14,7 @@ async function startServer (cwd) {
   //       correctly on CI and the action got stuck. npx does not cause that problem.
   snowpackProcess = execa(
     path.resolve('node_modules', '.bin', 'snowpack'),
-    ['dev', '--verbose', '--output', 'stream'],
+    ['dev', '--verbose', '--output', 'stream', '--reload'],
     {cwd},
   );
 
@@ -28,7 +28,7 @@ async function startServer (cwd) {
       snowpackProcess.cancel();
       console.error(output.join(''));
       reject(new Error('Timeout: snowpack did not start server within 3 seconds.'));
-    }, 3000);
+    }, 5000);
 
     const output = [];
     snowpackProcess.stdout.on('data', (buffer) => {

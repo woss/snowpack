@@ -84,13 +84,14 @@ function generateEnvObject(userEnv: EnvVarReplacements): Object {
   };
 }
 
-function generateReplacements(env: Object): {[key: string]: string} {
+function generateReplacements(env: Object): {[key: string]: string | boolean} {
   return Object.keys(env).reduce(
     (acc, key) => {
       acc[`process.env.${key}`] = JSON.stringify(env[key]);
       return acc;
     },
     {
+      preventAssignment: true,
       // Other find & replacements:
       // tslib: fights with Rollup's namespace/default handling, so just remove it.
       'mod && mod.__esModule': 'true',
