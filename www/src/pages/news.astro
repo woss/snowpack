@@ -34,18 +34,10 @@ const description = 'Snowpack community news and companies that use Snowpack.';
 
     <p>
       Got something that you think we should feature?
-      <a href="https://github.com/snowpackjs/snowpack/discussions/categories/ideas">Submit it!</a>
+      <a href="https://github.com/FredKSchott/snowpack/discussions/categories/ideas">Submit it!</a>
     </p>
 
     <div class="card-grid card-grid-3">
-      <article class="discord-banner">
-        <a href="https://discord.gg/snowpack" style="flex-shrink: 0; height: 48px;"><img alt="Join us on Discord!"
-            src="https://img.shields.io/discord/712696926406967308.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2"
-            style="height: 48px;  border: none; margin-right: 1rem; filter: brightness(1.2) contrast(1.5);" /></a>
-        <div>Join us on Discord to discuss Snowpack, meet other developers in our community, and show off what you’re
-          working on!</div>
-      </article>
-
       {news.reverse().map((item: any) => <Card item={item} />)}
     </div>
 
@@ -58,7 +50,7 @@ const description = 'Snowpack community news and companies that use Snowpack.';
         {users.map((user) =>
         <CompanyLogo user={user} />)}
 
-        <a href="https://github.com/snowpackjs/snowpack/edit/main/www/_template/news.md" target="_blank"
+        <a href="https://github.com/FredKSchott/snowpack/edit/main/www/_template/news.md" target="_blank"
           title="Add Your Project/Company!" class="add-company-button">
           <svg style="height: 22px; margin-right: 8px;" aria-hidden="true" focusable="false" data-prefix="fas"
             data-icon="plus" class="company-logo" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
